@@ -1,0 +1,23 @@
+This is a seed project to use Java at back end and Angular at front end.
+The purpose is to use Java for building RESTful api server and use Angular to consume that RESTful api.
+I've used Eclipse for the development IDE. 
+I've used Maven to create the project template. (File -> New -> Maven Project -> maven-archetype-webapp)
+I've also used Tomcat v8.0.29 server.
+
+homepage url: http://localhost:8080/mavenWebApp 
+
+Directory Organization:
+
+
+Setup:
+
+
+TODO:
+1. add MySQL database to store data
+2. implement RESTful API using JAVA
+3. implement CRUD in Angular using RESTful API
+
+Source:
+The seed project is built by following the tutorial:
+www.draptik.github.io/blog/2013/07/13/angularjs-example-using-a-java-restful-web-service
+ 
