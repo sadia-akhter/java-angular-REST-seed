@@ -9,8 +9,20 @@ homepage url: http://localhost:8080/mavenWebApp
 Directory Organization:
 
 
-Setup:
-
+Setup
+Front end: 
+1. go to webapp directory
+	$ cd 
+2. install bower globally
+	$ npm install -g bower
+3. initialize bower for current project
+	$ bower init
+4. install angularjs
+	$ bower install angular --save
+5. install bootstrap
+	$ bower install bootstrap --save
+6. install ng-resouce
+	$ bower install angular-resource --save
 
 TODO:
 1. add MySQL database to store data
