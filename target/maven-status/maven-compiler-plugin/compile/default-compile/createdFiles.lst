@@ -1,0 +1,3 @@
+ngdemo/service/UserService.class
+ngdemo/domain/User.class
+ngdemo/rest/UserRestService.class
