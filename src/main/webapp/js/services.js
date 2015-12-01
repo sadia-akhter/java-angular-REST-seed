@@ -9,3 +9,13 @@ services.factory('UserFactory', function ($resource) {
         }
     })
 });
+
+services.factory('DummyFactory', function($resource) {
+	return $resource('/mavenWebApp/rest/dummy', {}, {
+		query: {
+			method: 'GET',
+			params: {},
+			isArray: false
+		}
+	});
+});

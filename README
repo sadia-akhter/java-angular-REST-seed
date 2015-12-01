@@ -1,18 +1,25 @@
 This is a seed project to use Java at back end and Angular at front end.
-The purpose is to use Java for building RESTful api server and use Angular to consume that RESTful api.
-I've used Eclipse for the development IDE. 
-I've used Maven to create the project template. (File -> New -> Maven Project -> maven-archetype-webapp)
-I've also used Tomcat v8.0.29 server.
-
-homepage url: http://localhost:8080/mavenWebApp 
-
-Directory Organization:
+The purpose is to use Java for building RESTful API server and use Angular to consume that RESTful API.
 
 
 Setup
+====================================================
+
+IDE: 
+Eclipse Java EE IDE for Web Developers
+Version: Mars.1 Release (4.5.1)
+
+Project template:
+Use Maven to create the project template. (File -> New -> Maven Project -> maven-archetype-webapp)
+
+Server:
+Tomcat v8.0.29 server 
+
+Directory Organization:
+
 Front end: 
 1. go to webapp directory
-	$ cd 
+	$ cd /path-to-your-project-dir/src/main/webapp/
 2. install bower globally
 	$ npm install -g bower
 3. initialize bower for current project
@@ -23,13 +30,39 @@ Front end:
 	$ bower install bootstrap --save
 6. install ng-resouce
 	$ bower install angular-resource --save
+7. install ngRoute
+	$ bower install angular-route --save
 
-TODO:
+
+Back end:
+1. update pom.xml to include the following dependency in project -> dependencies
+
+	<dependency>
+		<groupId>com.google.inject</groupId>
+		<artifactId>guice</artifactId>
+		<version>3.0-rc3</version>
+	</dependency>
+
+
+Test
+-----
+Open a browser and put the following ulr in the location bar:
+	http://localhost:8080/nameOfYourProjectInEclipse 
+	
+
+
+TODO
+-----
 1. add MySQL database to store data
 2. implement RESTful API using JAVA
 3. implement CRUD in Angular using RESTful API
 
-Source:
-The seed project is built by following the tutorial:
+
+References
+-----------
+The seed project is built by following two tutorials:
 www.draptik.github.io/blog/2013/07/13/angularjs-example-using-a-java-restful-web-service
- 
+http://draptik.github.io/blog/2013/07/28/restful-crud-with-angularjs/
+
+https://github.com/draptik/angulardemorestful/releases/tag/step1
+https://github.com/draptik/angulardemorestful 
