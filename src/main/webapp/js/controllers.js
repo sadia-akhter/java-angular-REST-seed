@@ -7,8 +7,20 @@ app.run(function ($rootScope, $templateCache) {
   });
 });
 
-app.controller('DummyCtrl', ['$scope', 'UserFactory', function ($scope, UserFactory) {
-    UserFactory.get({}, function (userFactory) {
-        $scope.firstname = userFactory.firstName;
-    })
+//app.controller('DummyCtrl', ['$scope', 'DummyFactory', function ($scope, UserFactory) {
+//    UserFactory.get({}, function (userFactory) {
+//        $scope.firstname = userFactory.firstName;
+//    })
+//}]);
+
+app.controller('DummyCtrl', ['$scope', 'DummyFactory', function ($scope, DummyFactory) {
+	DummyFactory.get({}, function (dummyFactory) {
+  $scope.firstname = dummyFactory.firstName;
+  $scope.lastname = dummyFactory.lastName;
+})
 }]);
+
+
+//app.controller('UserListCtrl', ['$scope', 'UsersFactory', function ($scope, UsersFactory) {
+//	$scope.users = UsersFactory.query();
+//}])

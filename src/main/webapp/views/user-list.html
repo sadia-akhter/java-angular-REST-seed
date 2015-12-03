@@ -1,0 +1,20 @@
+<div class="panel">
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th></th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="user in users">
+			<td>{{user.firstName}}</td>
+			<td>{{user.lastName}}</td>
+			<td><a ng-click="editUser(user.id)" class="btn btn-small btn-primary">edit</a></td>
+			<td><a ng-click="deleteUser(user.id)" class="btn btn-small btn-primary">delete</a></td>			
+		</tr>
+		</tbody>
+	</table>
+</div>

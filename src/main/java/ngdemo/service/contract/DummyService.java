@@ -1,4 +1,4 @@
-package ngdemo.service;
+package ngdemo.service.contract;
 
 import ngdemo.domain.User;
 

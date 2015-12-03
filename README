@@ -1,6 +1,5 @@
-This is a seed project to use Java at back end and Angular at front end.
-The purpose is to use Java for building RESTful API server and use Angular to consume that RESTful API.
-
+This is not a step by step guide for building the seed project. Some tweaks might be needed to make it work.
+The following setup information is mere notes for building it.
 
 Setup
 ====================================================
@@ -35,13 +34,55 @@ Front end:
 
 
 Back end:
-1. update pom.xml to include the following dependency in project -> dependencies
+1. update pom.xml to include the following dependencies: project -> dependencies
 
+	<dependency>
+    	<groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-server</artifactId>
+    	<version>1.17.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-servlet</artifactId>
+    	<version>1.17.1</version>
+	</dependency>
+	<dependency>
+    	<groupId>com.sun.jersey</groupId>
+    	<artifactId>jersey-json</artifactId>
+    	<version>1.17.1</version>
+	</dependency>
 	<dependency>
 		<groupId>com.google.inject</groupId>
 		<artifactId>guice</artifactId>
 		<version>3.0-rc3</version>
 	</dependency>
+
+2. update web.xml to include the following:
+
+	<servlet>
+    	<servlet-name>jersey-serlvet</servlet-name>
+
+    	<servlet-class>
+        	com.sun.jersey.spi.container.servlet.ServletContainer
+    	</servlet-class>
+
+	    <init-param>
+    	    <param-name>com.sun.jersey.config.property.packages</param-name>
+        	<param-value>ngdemo.rest</param-value>
+	    </init-param>
+
+    	<init-param>
+        	<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+        	<param-value>true</param-value>
+    	</init-param>
+
+    	<load-on-startup>1</load-on-startup>
+	</servlet>
+
+<servlet-mapping>
+    <servlet-name>jersey-serlvet</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+</servlet-mapping>
 
 
 Test
@@ -56,7 +97,7 @@ TODO
 1. add MySQL database to store data
 2. implement RESTful API using JAVA
 3. implement CRUD in Angular using RESTful API
-
+4. build the project from scratch to make use the setup section is accurate. 
 
 References
 -----------
