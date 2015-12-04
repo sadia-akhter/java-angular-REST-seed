@@ -12,7 +12,6 @@ angular.module('ngdemo.services', ['ngResource'])
    return $resource('/mavenWebApp/rest/users', {}, {
       query: {
          method: 'GET',
-         params: {},
          isArray: true
       }
    });

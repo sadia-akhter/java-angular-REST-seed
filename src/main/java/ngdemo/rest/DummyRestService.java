@@ -27,11 +27,4 @@ public class DummyRestService {
         return dummyService.getDefaultUser();
     }
 
-//	  this method works without dependency injection. Trying to replace it with dependency injection	
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public User getDefaultDummyInJSON() {
-//        UserService userService = new UserService();
-//        return userService.getDefaultUser();
-//    }
 }

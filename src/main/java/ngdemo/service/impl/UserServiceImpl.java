@@ -22,9 +22,8 @@ public class UserServiceImpl implements UserService {
 		return repo.getDefaultUser();
 	}
 
-	public List<User> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<User> getAllUsers() {
+		return repo.getAll();
 	}
 
 }

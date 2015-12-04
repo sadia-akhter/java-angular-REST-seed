@@ -6,5 +6,5 @@ import ngdemo.domain.User;
 
 public interface UserService {
 	public User getDefaultUser();
-	public List<User> getAll();
+	public List<User> getAllUsers();
 }
