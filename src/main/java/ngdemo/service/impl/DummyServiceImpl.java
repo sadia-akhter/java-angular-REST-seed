@@ -17,7 +17,7 @@ public class DummyServiceImpl implements DummyService {
 	}
 	
 	public User getDefaultUser() {
-		return this.dummyRepository.getDefaultUser();
+		return dummyRepository.getDefaultUser();
 	}
 
 }
