@@ -18,10 +18,10 @@ angular.module('ngdemo.services', ['ngResource'])
 })
 .factory('UserFactory', function ($resource) {
    return $resource('/mavenWebApp/rest/users', {}, {
-   query: {
-      method: 'GET',
-      params: {},
-      isArray: false
-   }
+      query: {
+         method: 'GET',
+         params: {},
+         isArray: false
+      }
    });
 });

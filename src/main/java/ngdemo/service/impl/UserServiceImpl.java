@@ -11,19 +11,23 @@ import ngdemo.service.contract.UserService;
 
 public class UserServiceImpl implements UserService {
 
-	private UserMockRepository repo;
-	
-	@Inject
-	public UserServiceImpl(@InjectParam UserMockRepository repo) {
-		this.repo = repo;
-	}
-	
-	public User getDefaultUser() {
-		return repo.getDefaultUser();
-	}
+   private UserMockRepository repo;
 
-	public List<User> getAllUsers() {
-		return repo.getAll();
-	}
+   @Inject
+   public UserServiceImpl(@InjectParam UserMockRepository repo) {
+      this.repo = repo;
+   }
+
+   public User getDefaultUser() {
+      return repo.getDefaultUser();
+   }
+
+   public List<User> getAllUsers() {
+      return repo.getAll();
+   }
+
+   public User getUserById(int id) {
+      return repo.getById(id);
+   }
 
 }
