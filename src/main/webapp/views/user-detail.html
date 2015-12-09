@@ -1,0 +1,18 @@
+<div class="panel">
+	<h3>User Detail</h3>
+	<div ng-controller="UserDetailCtrl">
+		<form novalidate>
+			<label>First Name</label>
+			<input type="text" name="firstName" ng-model="user.firstName">
+			<br>
+			<label>Last Name</label>
+			<input type="text" name="firstName" ng-model="user.lastName">
+			<br>
+			<br>
+			<div class="text-left">
+				<a class="btn btn-small btn-default" ng-click="cancel()">Cancel</a>
+				<a class="btn btn-small btn-default" ng-click="update(user)">Update User</a>
+			</div>
+		</form>
+	</div>
+</div>

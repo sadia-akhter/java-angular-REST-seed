@@ -2,7 +2,11 @@ package ngdemo.rest;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -27,15 +31,33 @@ public class UserRestService {
    @GET
    @Produces(MediaType.APPLICATION_JSON)
    public List<User> getAllUsersInJSON() { // http://localhost:8080/mavenWebApp/rest/users/
-      System.out.println("REST for all users");
-      return userService.getAllUsers();
+      return this.userService.getAllUsers();
    }
 
    @GET
    @Path("{id}")
    @Produces(MediaType.APPLICATION_JSON)
    public User getUserByIdInJSON(@PathParam("id") int id) { // http://localhost:8080/mavenWebApp/rest/users/1
-      return userService.getUserById(id);
+      return this.userService.getUserById(id);
    }
 
+   @POST
+   @Consumes(MediaType.APPLICATION_JSON)
+   public void createUser(User user) {
+      this.userService.createNewUser(user);
+   }
+   
+   @PUT
+   @Consumes(MediaType.APPLICATION_JSON)
+   @Produces(MediaType.APPLICATION_JSON)
+   public void update(User user) {
+      this.userService.updateUserById(user);
+   }
+   
+   @DELETE
+   @Path("{id}")
+   @Produces(MediaType.APPLICATION_JSON)
+   public void remove(@PathParam("id") int id) {
+      this.userService.deleteUserById(id);
+   }
 }

@@ -85,6 +85,30 @@ Back end:
 </servlet-mapping>
 
 
+MySQL integration
+------------------
+
+Create a database called users.
+mysql> create database users;
+
+Create a table called users in the database
+mysql> create table users(
+    -> user_id INT NOT NULL AUTO_INCREMENT,
+    -> firstname varchar(50),
+    -> lastname varchar(50));
+
+insert some entries in the table
+mysql> insert into users (firstname, lastname) values ('Foo1', 'Bar1');
+
+update pom.xml with the following dependency to install MySQL in the project
+		<!--  MySQL -->
+		<dependency>
+  			<groupId>mysql</groupId>
+  			<artifactId>mysql-connector-java</artifactId>
+  			<version>5.1.6</version>
+		</dependency>
+
+
 Test
 -----
 Open a browser and put the following ulr in the location bar:
@@ -94,7 +118,7 @@ Open a browser and put the following ulr in the location bar:
 
 TODO
 -----
-1. add MySQL database to store data
+1. add MySQL database to store data -- done
 2. implement RESTful API using JAVA
 3. implement CRUD in Angular using RESTful API
 4. build the project from scratch to make use the setup section is accurate. 
